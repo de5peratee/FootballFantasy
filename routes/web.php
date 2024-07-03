@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\RegistrationControllerr;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/authorization');
 });
+
+Route::get('/authorization', [AuthorizationController::class, 'index']);
+
+Route::get('/registration', [RegistrationControllerr::class, 'index']);
