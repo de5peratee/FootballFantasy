@@ -13,11 +13,11 @@ main {
 }
 
 .header {
-    height: var(--header-height);
-    padding: 13px 20px;
+    min-height: var(--header-height);
+    margin-inline: auto;
+    padding-inline: 20px;
     border-bottom-left-radius: var(--border-radius-small);
     border-bottom-right-radius: var(--border-radius-small);
-    background-color: var(--color-dark);
 }
 
 .form {
@@ -80,15 +80,15 @@ main {
 
 .form__footer {
     display: flex;
-    justify-content: space-between;
-    --button-width: 253px; 
-    --button-height: 60px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
 }
 
 .form__button {
-    width: var(--button-width);
-    max-height: var(--button-height);
+    width: 100%;
     padding-block: 18px;
+    padding-inline: 10px;
 }
 
 
@@ -112,7 +112,6 @@ main {
 }
 
 @media (max-width: 768px) {
-
     .form__input-group {
         row-gap: 10px;
     }

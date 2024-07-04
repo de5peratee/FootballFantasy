@@ -9,7 +9,7 @@
     @vite(['resources/css/auth.css'])
 </head>
 <body>
-<header class="header container">
+<header class="header centring-wrapper">
     <a href="./authorization">
         <img class="header__logo centered"
              src={{asset('images/logo.svg')}}
@@ -18,7 +18,7 @@
         />
     </a>
 </header>
-<main class="centring-wrapper">
+<main>
     <form action="/registration" method="POST" class="form container">
         @csrf
         <div class="form__wrapper centered">
@@ -63,8 +63,8 @@
             </div>
 
             <footer class="form__footer">
-                <a class="form__button button" href="./authorization">Уже есть аккаунт</a>
                 <input class="form__submit form__button button button--dark" type="submit" value="Зарегистрироваться"/>
+                <a class="link" href="./authorization">Уже есть аккаунт</a>
             </footer>
         </div>
     </form>
