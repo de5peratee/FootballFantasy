@@ -4,13 +4,13 @@ document.addEventListener('click', function(event) {
 
     if (!isTouchDevice) return
     
-    let wrapper = event.target.closest('.player__avatar-wrapper')
+    let wrapper = event.target.closest('[data-control-container]')
 
     if (wrapper) {
-        wrapper.querySelector('.player__controls').classList.add('active');
+        wrapper.querySelector('[data-hidden-control]').classList.add('active');
     }
     else {
-        let playerMenus = document.querySelectorAll('.player__controls.active')
+        let playerMenus = document.querySelectorAll('[data-hidden-control].active')
         for (let i of playerMenus) {
             i.classList.remove('active');
         }

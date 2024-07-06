@@ -7,6 +7,7 @@
 
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
+    @vite(['resources/css/lobby.css'])
 </head>
 <body>
     @include('aside_menu')
@@ -17,7 +18,7 @@
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
                     <span class="burger__decor"></span>
                 </button>  
-                <a class="header__logo-link" href="#">
+                <a class="header__logo-link" href="/main_page">
                     <img class="header__logo"
                         src={{asset('images/mini-logo.svg')}}
                         alt="football fantasy logo"
@@ -36,14 +37,13 @@
                     <button class="button--light banner__button">
                         Принять участие
                     </button>
-                    <time class="banner__start-time">4 июнь 2024</time>
+                    <time class="banner__start-time" datetime="2024-07-04">4 июнь 2024</time>
                 </div>
             </section>
             <h2 class="visually-hidden">tournament members</h2>
             <header class="content-header content-header__group">
                 <div class="content-header__group">
                     <h3 class="content-header__title">Игроки</h3>
-                    <button class="content-header__show button--boring">Посмотреть все</button>
                 </div>
                 <div class="content-header__group">
                     <ul class="content-header__type-list">
@@ -58,49 +58,13 @@
             </header>
             <div class="players">
                 <figure class="player">
-                    <div class="player__avatar-wrapper">
+                    <div class="player__avatar-wrapper" data-control-container>
                         <img class="player__avatar" 
                             src={{asset('images/avatar.svg')}} 
                             alt="" 
                             loading="lazy"
                         />
-                        <div class="player__controls">
-                            <div class="player__inf player__inf--top">
-                                Профиль
-                            </div>
-                            <a class="player__inf player__inf--bottom" href="./team">
-                                Команда
-                            </a>
-                        </div>
-                    </div>
-                    <figcaption class="player__nickname clip-text">Ник пользователя</figcaption>
-                </figure>
-                <figure class="player">
-                    <div class="player__avatar-wrapper">
-                        <img class="player__avatar" 
-                            src={{asset('images/avatar.svg')}} 
-                            alt="" 
-                            loading="lazy"
-                        />
-                        <div class="player__controls">
-                            <div class="player__inf player__inf--top">
-                                Профиль
-                            </div>
-                            <a class="player__inf player__inf--bottom" href="./team">
-                                Команда
-                            </a>
-                        </div>
-                    </div>
-                    <figcaption class="player__nickname clip-text">Ник пользователя</figcaption>
-                </figure>
-                <figure class="player">
-                    <div class="player__avatar-wrapper">
-                        <img class="player__avatar" 
-                            src={{asset('images/avatar.svg')}} 
-                            alt="" 
-                            loading="lazy"
-                        />
-                        <div class="player__controls">
+                        <div class="player__controls" data-hidden-control>
                             <div class="player__inf player__inf--top">
                                 Профиль
                             </div>
@@ -128,7 +92,7 @@
                     </li>
                     <li class="reglament__item centring-wrapper">
                         <p class="reglament__content">
-                            06.07.2024 15:30
+                            <time datetime="">06.07.2024 15:30</time>
                         </p>
                     </li>
                     <li class="reglament__item  centring-wrapper">
@@ -136,18 +100,16 @@
                             Турнир начат
                         </p>
                     </li>
-
-                    <!-- это появляется когда чел уже участвует -->
-                    <li class="reglament__item">
+                    <!-- <li class="reglament__item">
                         <button class="leave-button reglament__content button--white reglament__item centring-wrapper">
                             Покинуть турнир
                         </button>
-                    </li>
+                    </li> -->
                 </ul>
             </footer>
     </div>
 
     @vite('resources/js/modal-menu.js')
-    @vite('resources/js/players-card.js')
+    @vite('resources/js/hidden-controls.js')
 </body>
 </html>

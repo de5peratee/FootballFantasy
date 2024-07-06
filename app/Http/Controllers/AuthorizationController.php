@@ -12,7 +12,7 @@ class AuthorizationController extends Controller
 {
     public function index()
     {
-        return view('/tournament');
+        return view('/authorization');
     }
 
     public function login(Request $request)

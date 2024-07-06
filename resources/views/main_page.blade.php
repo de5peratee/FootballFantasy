@@ -6,6 +6,9 @@
     <title>Football Fantasy</title>
 </head>
 <body>
-    <a class="menu__item" href="/logout" >Выход</a>
+    <ul>
+        <li><a href="/logout">Выход</a></li>
+        <li><a href="/all-tournaments">К турнирам</a></li>
+    </ul>
 </body>
 </html>

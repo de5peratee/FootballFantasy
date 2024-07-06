@@ -17,7 +17,7 @@
     <nav class="aside__nav">
         <ul class="aside__list">
             <li class="aside__item">
-                <a href="" class="aside__link">
+                <a href="/main_page" class="aside__link">
                     <svg class="aside__svg--stroked" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 16H1.83333C1.3731 16 1 15.6181 1 15.147V8.67664C1 8.45044 1.0878 8.23344 1.24408 8.07351L7.91075 1.24983C8.23617 0.916723 8.76383 0.916723 9.08925 1.24983L15.7559 8.07351C15.9122 8.23344 16 8.45044 16 8.67664V15.147C16 15.6181 15.6269 16 15.1667 16H11M6 16H11M6 16V10.8822C6 10.4111 6.3731 10.0293 6.83333 10.0293H10.1667C10.6269 10.0293 11 10.4111 11 10.8822V16" stroke-width="2" stroke-linejoin="round"/>
                     </svg>
@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="aside__item">
-                <a href="" class="aside__link">
+                <a href="/all-tournaments" class="aside__link">
                     <svg class="aside__svg--stroked" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.90973 3.5C1.72213 4.82689 1 6.57912 1 8.5C1 9.07283 1.06422 9.63067 1.18585 10.1667M2.90973 3.5C4.28303 1.96563 6.27875 1 8.5 1C12.0693 1 15.0563 3.49335 15.8142 6.83333M2.90973 3.5H8.5M1.18585 10.1667H9.33333M1.18585 10.1667C1.47208 11.4281 2.07628 12.5688 2.90973 13.5M15.8142 6.83333C15.9357 7.36933 16 7.92717 16 8.5C16 12.6422 12.6422 16 8.5 16C6.27875 16 4.28303 15.0343 2.90973 13.5M15.8142 6.83333H11M2.90973 13.5H7.66667M8.5 6.83333H6.83333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
