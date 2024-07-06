@@ -339,7 +339,7 @@ body {
     font-size: 32px;
 }
 
-.content-header__show {
+.content-header__button {
     padding: 4px 10px;
     border: 1px solid currentColor;
     border-radius: 4px;

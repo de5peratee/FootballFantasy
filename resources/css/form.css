@@ -8,6 +8,7 @@ form {
 
 .form__input {
     width: 100%;
+    min-width: 200px;
     padding: 20px;
     border-radius: var(--border-radius);
 }
@@ -25,21 +26,25 @@ form {
 }
 
 .form__input-box--date::before {
-    content: '';
+    content: 'Дата начала ';
     position: absolute;
     left: 20px;
     top: 20px;
     display: block;
     height: calc(100% - 40px);
-    width: 20px;
+    padding-top: 2px;
+    padding-left: 30px;
     background-image: url(../../public/images/calendar.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
+    color: var(--color-grey-alternate);
 }
 
 .form__input--date {
-    padding-left: 44px;
+    padding-left: 148px;
+    padding-right: 0;
+    color: var(--color-grey-alternate);
 }
 
 .form__input--date::-webkit-calendar-picker-indicator {
@@ -47,6 +52,33 @@ form {
     left: 20px;
     top: 20px;
     opacity: 0;
+}
+
+.form__input-box {
+    position: relative;
+}
+
+.input-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: calc(100% - 40px);
+}
+
+.input-controls__item {
+    height: 50%;
+    width: 20px;
+}
+
+@media (hover: hover) {
+    .input-controls__item:hover {
+        background-color: var(--color-grey-alternate);
+        cursor: default;
+    }
+}
+
+.form__error {
+    color: red;
 }
 
 .leagues {
@@ -102,5 +134,15 @@ form {
 @media (max-width: 500px) {
     .leagues {
         justify-content: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .form__input-box--date::before {
+        content: '';
+    }
+
+    .form__input--date {
+        padding-left: 48px;
     }
 }

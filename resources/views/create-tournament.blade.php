@@ -42,7 +42,10 @@
             </section>
             <h2 class="visually-hidden">tournier creating</h2>
             <header class="content-header content-header__group">
-                <h3 class="content-header__title">Создание турнира</h3>
+                <div class="content-header__group">
+                    <h3 class="content-header__title">Создание турнира</h3>
+                    <button class="content-header__button button--boring" type="reset" form="tournament">Сбросить</button>
+                </div>
                 <div class="content-header__group">
                     <ul class="content-header__type-list">
                         <li class="content-header__type">Текущие турниры</li>
@@ -68,11 +71,16 @@
                     <label for="budget" class="visually-hidden">Бюджет</label>
                     <input 
                         class="form__input input" 
-                        type="num" 
+                        type="number" 
                         id="budget" name="budget" 
-                        placeholder="Бюджет"
-                        title="Введите бюджет в долларах"
+                        placeholder="Бюджет в миллионах (от 50 до 400)"
+                        title="Введите бюджет в миллионах"
+                        min="50"
                     />
+                    <div class="input-controls">
+                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="budget">+</div>
+                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="budget">-</div>
+                    </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box form__input-box--date">
@@ -90,33 +98,49 @@
                     <label for="iteration-dur" class="visually-hidden">Длительность итерации</label>
                     <input 
                         class="form__input input" 
-                        type="num" 
+                        type="number" 
                         id="iteration-dur" name="iteration-dur" 
-                        placeholder="Длительность итерации"
+                        placeholder="Длительность итерации (дни)"
                         title="Введите длительность итерации в днях"
+                        min="0"
                     />
+                    <div class="input-controls">
+                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="iteration-dur">+</div>
+                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="iteration-dur">-</div>
+                    </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box">
                     <label for="iteration-cnt" class="visually-hidden">Длительность итерации</label>
                     <input 
                         class="form__input input" 
-                        type="num" 
+                        type="number" 
                         id="iteration-cnt" name="iteration-cnt" 
                         placeholder="Количество итераций"
                         title="Введите количество итераций"
+                        min="1"
                     />
+                    <div class="input-controls">
+                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="iteration-cnt">+</div>
+                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="iteration-cnt">-</div>
+                    </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box">
                     <label for="members-cnt" class="visually-hidden">Длительность итерации</label>
                     <input 
                         class="form__input input" 
-                        type="num" 
+                        type="number" 
                         id="members-cnt" name="members-cnt" 
                         placeholder="Количество участников"
-                        title="Введите количество участников турнира"
+                        title="Введите количество участников турнира (до 5)"
+                        min="1"
+                        max="5"
                     />
+                    <div class="input-controls">
+                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="members-cnt">+</div>
+                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="members-cnt">-</div>
+                    </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__wide-container">
@@ -177,5 +201,6 @@
 
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/hidden-controls.js')
+    @vite('resources/js/form.js')
 </body>
 </html>
