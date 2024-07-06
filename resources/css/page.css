@@ -59,11 +59,9 @@ body {
 }
 
 .input {
-    
     background-color: var(--color-grey);
     color: var(--color-white);
     border: 1px solid transparent;
-    border-radius: 4px;
 }
 
 .input::placeholder {
@@ -385,6 +383,7 @@ body {
     padding: var(--padding-block);
     display: flex;
     justify-content: space-between;
+    border-radius: 4px;
 }
 
 @media (max-width: 500px) {

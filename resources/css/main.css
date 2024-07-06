@@ -16,9 +16,8 @@
 
 body {
   font-family: var(--font-main);
-  font-size: 20px;
-  color: var(--color-black);
   min-height: 100vh;
+  overflow-y: hidden;
 }
 
 .container {
@@ -199,10 +198,6 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
 	-webkit-appearance:none;
 }
-
- html {
-   min-height: 100%;
- }
 
  html,
  :has(:target) {

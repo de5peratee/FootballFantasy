@@ -77,6 +77,12 @@
     letter-spacing: -0.04;
 }
 
+@media (max-width: 500px) {
+    .players {
+        margin-inline: auto;
+    }
+}
+
 .my-team-button {
     width: 100%;
     max-width: 320px;

@@ -1,0 +1,106 @@
+
+form {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+.form__input-box--wide {
+    grid-column: span 2;
+}
+
+.form__wide-container {
+    grid-column: 1 / -1;
+}
+
+.form__input-box--date {
+    position: relative;
+}
+
+.form__input-box--date::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: block;
+    height: calc(100% - 40px);
+    width: 20px;
+    background-image: url(../../public/images/calendar.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form__input--date {
+    padding-left: 44px;
+}
+
+.form__input--date::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    opacity: 0;
+}
+
+.leagues {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.league {
+    border-radius: var(--border-radius);
+    height: 150px;
+    aspect-ratio: 1;
+    padding: 16px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 6px solid var(--color-white);
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.league__title {
+    color: var(--color-black);
+    font-size: 15px;
+}
+
+.league__timestamp {
+    color: var(--color-grey);
+    font-size: 11px;
+}
+
+.league:has(input:checked) {
+    border: 6px solid var(--color-accent);
+}
+
+@media (max-width: 1439px) {
+    .form {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 766px) {
+    .form {
+        grid-template-columns: auto;
+    }
+
+    .form__input-box--wide {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .leagues {
+        justify-content: center;
+    }
+}
