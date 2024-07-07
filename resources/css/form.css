@@ -104,7 +104,12 @@ form {
 .league__title {
     color: var(--color-black);
     font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 120px;
 }
+
 
 .league__timestamp {
     color: var(--color-grey);
