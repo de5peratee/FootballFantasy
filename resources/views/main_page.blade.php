@@ -30,6 +30,7 @@
             <time class="header__timer">11:48</time>
         </header>
         <a href="/logout" style="font-size: 100px; ">Разлогиниться</a>
+        <a href="/draft" style="font-size: 100px;">Draft</a>
     </div>
 
     @vite('resources/js/modal-menu.js')

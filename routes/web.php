@@ -9,6 +9,7 @@ use App\Http\Controllers\AllTournamentsController;
 use App\Http\Controllers\MyTournamentsController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\CreateTournamentController;
+use App\Http\Controllers\DraftController;
 
 Route::get('/', function () {
     return redirect('/authorization');
@@ -34,8 +35,11 @@ Route::get('/my-tournaments', [MyTournamentsController::class, 'index'])->middle
 //Турнир
 Route::get('/tournament', [TournamentController::class, 'index'])->middleware('auth');
 
-//Турнир
+//Создание турнира
 Route::get('/create-tournament', [CreateTournamentController::class, 'index'])->middleware('auth');
+
+//Драфт
+Route::get('/draft', [DraftController::class, 'index'])->middleware('auth');
 
 //Выход из сессии
 Route::get('/logout', [LogoutController::class, 'logout']);

@@ -113,13 +113,13 @@
     overflow-wrap: break-word;
 }
 
-
 .reglament__item:not(:last-child) {
     border-right: 1px solid var(--color-grey-alternate);
 }
 
 .reglament__content {
     max-width: 300px;
+    width: 100%;
     padding: 10px 19px;
     font-weight: 600;
     text-align: center;
@@ -128,6 +128,7 @@
 .leave-button {
     height: 100%;
     border: 0;
+    color: var(--color-black);
 }
 
 @media (max-width: 766px) {
@@ -138,18 +139,17 @@
     }
 
     .reglament__list {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
+        flex-wrap: wrap;   
     }
 
     .reglament__item {
         min-height: 0;
-        width: 100%;
         max-width: none;
+        flex-grow: 1;
     }
 
     .reglament__item:first-child {
-        grid-column: span 3;
+        flex-basis: 100%;
         border-bottom: 1px solid var(--color-grey-alternate);
         border-right: none;
     }

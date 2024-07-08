@@ -13,6 +13,8 @@
 
     --border-radius: 16px;
     --border-radius-light: 8px; 
+
+    overflow: hidden;
 }
 
 body {
@@ -20,7 +22,11 @@ body {
     grid-template-columns: auto 1fr;
     font-size: 16px;
     color: var(--color-white);
+    background-image: url(../../public/images/page_background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: #202020;
+    overflow: hidden;
 }
 
 .button--light {
@@ -114,28 +120,59 @@ body {
     scrollbar-width: 0;
 }
 
-.aside__item {
+.aside__item-wrapper {
     border-bottom: 1px solid rgb(255, 255, 255, 0.1); 
 }
 
-.aside__link {
-    padding: 15px 22px;
+.aside-item {
+    width: 100%;
+    max-width: 100%;
+    padding-block: 15px;
+    padding-inline: 20px;
     display: flex;
     align-items: center;
-    column-gap: 21px;
+    column-gap: 20px;
+    background-color: transparent;
+    border: 0;
 }
 
-.aside__link:hover {
+.aside-item:hover {
     color: var(--color-black);
     background-color: var(--color-accent);
 }
 
-.aside__svg--stroked {
+.aside-item:disabled {
+    color: var(--color-grey-alternate);
+}
+
+.aside-item--text {
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-grey-alternate);
+    color: var(--color-black);
+}
+
+.aside-item--text:hover {
+    background-color: var(--color-grey-alternate);
+}
+
+.aside-item__svg-wrapper {
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.aside-item__svg--stroked {
     stroke: currentColor;
 }
 
-.aside__svg--filled {
+.aside-item__svg--filled {
     fill: currentColor;
+}
+
+.aside-item__name {
+    display: block;
+    max-width: 100%;
+    hyphens: auto;
 }
 
 .burger {
@@ -207,7 +244,7 @@ body {
     position: relative;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr;
 }
 
 .header {
@@ -360,23 +397,25 @@ body {
     border-bottom: 1px solid var(--color-accent);
 }
 
-.content-header__search-box {
+.search-box {
     position: relative;
-    
-    --padding-block: 10px;
 }
 
-.content-header__search-box::before {
-    content: '';
+.search-box__controls {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    display: block;
-    height: calc(100% - var(--padding-block) * 2);
+    height: 20px;
     width: 20px;
     background-image: url(../../public/images/search.svg);
     background-size: contain;
-    background-position: right 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+.search-box__controls:hover {
+    background-color: var(--color-grey-alternate);
 }
 
 .content-header__search {

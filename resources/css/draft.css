@@ -1,0 +1,27 @@
+
+.draft {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 90px;
+    height: 100%;
+    padding-inline: var(--content-inline-padding);
+    align-items: stretch;
+}
+
+.field {
+    padding-block: 35px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field__body {
+    height: 100%;
+    aspect-ratio: 0.653;
+    background-image: url(../../public/images/field.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+

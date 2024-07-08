@@ -12,7 +12,7 @@
 <body>
     @include('aside_menu')
     <div class="content">
-        <h1 class="visually-hidden">All tournaments</h1>
+        <h1 class="visually-hidden">Создание своего турнира</h1>
         <header class="header">
             <div class="header__controls centring-wrapper">
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
@@ -40,10 +40,9 @@
                     <time class="banner__start-time" datetime="2024-07-05">5 июнь 2024</time>
                 </div>
             </section>
-            <h2 class="visually-hidden">tournier creating</h2>
             <header class="content-header content-header__group">
                 <div class="content-header__group">
-                    <h3 class="content-header__title">Создание турнира</h3>
+                    <h2 class="content-header__title">Создание турнира</h2>
                     <button class="content-header__button button--boring" type="reset" form="tournament">Сбросить</button>
                 </div>
                 <div class="content-header__group">
@@ -56,8 +55,8 @@
 
             <!-- action и method пока пустые -->
             <form class="form" action="" method="" id="tournament">
-                <h3 class="visually-hidden">form for tournament creating</h3>
-                <div class="form__input-box form__input-box--wide">
+                <h2 class="visually-hidden">Форма создания турнира</h2>
+                <div class="form__input-box">
                     <label for="tournament-name" class="visually-hidden">Название турнира</label>
                     <input 
                         class="form__input  input" 
@@ -67,7 +66,7 @@
                     />
                     <span class="form__error"></span>
                 </div>
-                <div class="form__input-box form__input-box--wide">
+                <div class="form__input-box">
                     <label for="budget" class="visually-hidden">Бюджет</label>
                     <input 
                         class="form__input input" 
@@ -78,13 +77,13 @@
                         min="50"
                     />
                     <div class="input-controls">
-                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="budget">+</div>
-                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="budget">-</div>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="increment" data-target-id="budget">+</button>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="decrement" data-target-id="budget">-</button>
                     </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box form__input-box--date">
-                    <label for="date" class="visually-hidden">Бюджет</label>
+                    <label for="date" class="visually-hidden">Дата начала турнира</label>
                     <input 
                         class="form__input form__input--date input" 
                         type="datetime-local" 
@@ -105,13 +104,13 @@
                         min="0"
                     />
                     <div class="input-controls">
-                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="iteration-dur">+</div>
-                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="iteration-dur">-</div>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="increment" data-target-id="iteration-dur">+</button>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="decrement" data-target-id="iteration-dur">-</button>
                     </div>
                     <span class="form__error"></span>
                 </div>
-                <div class="form__input-box">
-                    <label for="iteration-cnt" class="visually-hidden">Длительность итерации</label>
+                <div class="form__input-box" >
+                    <label for="iteration-cnt" class="visually-hidden">Количество итераций</label>
                     <input 
                         class="form__input input" 
                         type="number" 
@@ -121,13 +120,13 @@
                         min="1"
                     />
                     <div class="input-controls">
-                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="iteration-cnt">+</div>
-                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="iteration-cnt">-</div>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="increment" data-target-id="iteration-cnt">+</button>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="decrement" data-target-id="iteration-cnt">-</button>
                     </div>
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box">
-                    <label for="members-cnt" class="visually-hidden">Длительность итерации</label>
+                    <label for="members-cnt" class="visually-hidden">Количество участников</label>
                     <input 
                         class="form__input input" 
                         type="number" 
@@ -138,16 +137,50 @@
                         max="5"
                     />
                     <div class="input-controls">
-                        <div class="input-controls__item centring-wrapper" data-action="increment" data-target-id="members-cnt">+</div>
-                        <div class="input-controls__item centring-wrapper" data-action="decrement" data-target-id="members-cnt">-</div>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="increment" data-target-id="members-cnt">+</button>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="decrement" data-target-id="members-cnt">-</button>
                     </div>
                     <span class="form__error"></span>
                 </div>
+                <div class="form__input-box">
+                    <label for="timer" class="visually-hidden">Время на выбор футболиста</label>
+                    <input 
+                        class="form__input form__passowrd input" 
+                        type="number" 
+                        id="timer" name="timer" 
+                        placeholder="Время на выбор (сек)"
+                        title="Введите максимальное время, в течение которого нужно выборать одного футболиста"
+                        min="45"
+                    />
+                    <div class="input-controls">
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="increment" data-target-id="timer">+</button>
+                        <button class="input-controls__item centring-wrapper" type="button" data-action="decrement" data-target-id="timer">-</button>
+                    </div>
+                    <span class="form__error"></span>
+                </div>
+                <div class="form__input-box">
+                    <label for="password" class="visually-hidden">Пароль</label>
+                    <input 
+                        class="form__input input" 
+                        type="text" 
+                        id="password" name="password" 
+                        placeholder="Пароль"
+                        title="Введите пароль, по которму можно будет присоединиться к турниру"
+                        min="1"
+                        max="5"
+                    />
+                    <span class="form__error"></span>
+                </div>
                 <div class="form__wide-container">
+                    <div class="form__league-search-box form__input-box search-box">
+                        <label class="visually-hidden" for="search">Поиск лиги</label>
+                        <input class="form__input input" form="x" type="search" id="search" name="search" placeholder="Найти лигу"/>
+                        <button class="search-box__controls" type="button" data-action="search" data-target-id="leagues"></button>
+                    </div>
                     <ul class="leagues">
                         <li class="leagues__item">
                             <label for="champion-league" class="league">
-                                <input class="visually-hidden" type="radio" id="champion-league" name="league" checked>
+                                <input class="leagues__input" type="radio" id="champion-league" name="league" checked>
                                 <div class="league__img-container">
                                     <img class="league__img"
                                         src={{asset('images/leagues/cl.png')}}
@@ -163,7 +196,7 @@
                         </li>
                         <li class="leagues__item">
                             <label for="champion-league2" class="league">
-                                <input class="visually-hidden" type="radio" id="champion-league2" name="league">
+                                <input class="leagues__input" type="radio" id="champion-league2" name="league">
                                 <div class="league__img-container">
                                     <img class="league__img"
                                         src={{asset('images/leagues/cl.png')}}
@@ -179,7 +212,7 @@
                         </li>
                         <li class="leagues__item">
                             <label for="champion-league3" class="league">
-                                <input class="visually-hidden" type="radio" id="champion-league3" name="league">
+                                <input class="leagues__input" type="radio" id="champion-league3" name="league">
                                 <div class="league__img-container">
                                     <img class="league__img"
                                         src={{asset('images/leagues/cl.png')}}

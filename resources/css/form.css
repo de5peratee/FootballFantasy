@@ -1,4 +1,9 @@
 
+.search-box__controls {
+    top: 20px;
+    right: 20px;
+}
+
 form {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -6,11 +11,8 @@ form {
     row-gap: 30px;
 }
 
-.form__input {
-    width: 100%;
-    min-width: 200px;
-    padding: 20px;
-    border-radius: var(--border-radius);
+.form__input-box {
+    position: relative;
 }
 
 .form__input-box--wide {
@@ -25,24 +27,13 @@ form {
     position: relative;
 }
 
-.form__input-box--date::before {
-    content: 'Дата начала ';
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    display: block;
-    height: calc(100% - 40px);
-    padding-top: 2px;
-    padding-left: 30px;
-    background-image: url(../../public/images/calendar.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left;
-    color: var(--color-grey-alternate);
+.form__league-search-box {
+    max-width: 300px;
+    margin-bottom: 20px;
 }
 
 .form__input--date {
-    padding-left: 148px;
+    padding-left: 44px;
     padding-right: 0;
     color: var(--color-grey-alternate);
 }
@@ -52,22 +43,36 @@ form {
     left: 20px;
     top: 20px;
     opacity: 0;
+    height: calc(100% - 40px);
 }
 
-.form__input-box {
-    position: relative;
+.form__input {
+    width: 100%;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: var(--border-radius);
 }
 
 .input-controls {
     position: absolute;
-    top: 20px;
+    top: 0;
     right: 20px;
-    height: calc(100% - 40px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    justify-content: center;
 }
 
 .input-controls__item {
-    height: 50%;
+    height: 20px;
     width: 20px;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-controls__item:hover {
+    background-color: var(--color-grey-alternate);
 }
 
 @media (hover: hover) {
@@ -113,6 +118,10 @@ form {
 
 .league:has(input:checked) {
     border: 6px solid var(--color-accent);
+}
+
+.leagues__input {
+    display: none;
 }
 
 @media (max-width: 1439px) {
