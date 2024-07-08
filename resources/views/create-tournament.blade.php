@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Football Fantasy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
@@ -17,22 +20,22 @@
             <div class="header__controls centring-wrapper">
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
                     <span class="burger__decor"></span>
-                </button>  
+                </button>
                 <a class="header__logo-link" href="/main_page">
                     <img class="header__logo"
                         src={{asset('images/mini-logo.svg')}}
                         alt="football fantasy logo"
                         width="39" height="39" loading="lazy"
                     />
-                </a>   
+                </a>
             </div>
-            <h2 class="header__title clip-text">Лето 2024</h2>   
+            <h2 class="header__title clip-text">Лето 2024</h2>
             <time class="header__timer">11:48</time>
         </header>
         <main class="main">
             <section class="banner">
                 <h2 class="banner__title">Лето <br/>2024</h2>
-                    
+
                 <div class="banner__content">
                     <button class="button--light banner__button" type="submit" form="tournament">
                         Создать турнир
@@ -58,20 +61,20 @@
                 <h2 class="visually-hidden">Форма создания турнира</h2>
                 <div class="form__input-box">
                     <label for="tournament-name" class="visually-hidden">Название турнира</label>
-                    <input 
-                        class="form__input  input" 
-                        type="text" 
-                        id="tournament-name" name="tournament-name" 
+                    <input
+                        class="form__input  input"
+                        type="text"
+                        id="tournament-name" name="tournament-name"
                         placeholder="Название турнира"
                     />
                     <span class="form__error"></span>
                 </div>
                 <div class="form__input-box">
                     <label for="budget" class="visually-hidden">Бюджет</label>
-                    <input 
-                        class="form__input input" 
-                        type="number" 
-                        id="budget" name="budget" 
+                    <input
+                        class="form__input input"
+                        type="number"
+                        id="budget" name="budget"
                         placeholder="Бюджет в миллионах (от 50 до 400)"
                         title="Введите бюджет в миллионах"
                         min="50"
@@ -95,10 +98,10 @@
                 </div>
                 <div class="form__input-box">
                     <label for="iteration-dur" class="visually-hidden">Длительность итерации</label>
-                    <input 
-                        class="form__input input" 
-                        type="number" 
-                        id="iteration-dur" name="iteration-dur" 
+                    <input
+                        class="form__input input"
+                        type="number"
+                        id="iteration-dur" name="iteration-dur"
                         placeholder="Длительность итерации (дни)"
                         title="Введите длительность итерации в днях"
                         min="0"
@@ -177,56 +180,27 @@
                         <input class="form__input input" form="x" type="search" id="search" name="search" placeholder="Найти лигу"/>
                         <button class="search-box__controls" type="button" data-action="search" data-target-id="leagues"></button>
                     </div>
-                    <ul class="leagues">
-                        <li class="leagues__item">
-                            <label for="champion-league" class="league">
-                                <input class="leagues__input" type="radio" id="champion-league" name="league" checked>
-                                <div class="league__img-container">
-                                    <img class="league__img"
-                                        src={{asset('images/leagues/cl.png')}}
-                                        alt=""
-                                        width="60" height="" loading="lazy"
-                                    />
-                                </div>
-                                <h4 class="league__title">Лига чемпионов</h4>
-                                <div class="league__timestamp">
-                                    <time datetime="2023-19-09">19.09.2023</time>&nbsp-&nbsp<time datetime="2024-06-02">02.06.2024</time>
-                                </div>
-                            </label>
-                        </li>
-                        <li class="leagues__item">
-                            <label for="champion-league2" class="league">
-                                <input class="leagues__input" type="radio" id="champion-league2" name="league">
-                                <div class="league__img-container">
-                                    <img class="league__img"
-                                        src={{asset('images/leagues/cl.png')}}
-                                        alt=""
-                                        width="60" height="" loading="lazy"
-                                    />
-                                </div>
-                                <h4 class="league__title">Лига чемпионов</h4>
-                                <div class="league__timestamp">
-                                    <time datetime="2023-19-09">19.09.2023</time>&nbsp-&nbsp<time datetime="2024-06-02">02.06.2024</time>
-                                </div>
-                            </label>
-                        </li>
-                        <li class="leagues__item">
-                            <label for="champion-league3" class="league">
-                                <input class="leagues__input" type="radio" id="champion-league3" name="league">
-                                <div class="league__img-container">
-                                    <img class="league__img"
-                                        src={{asset('images/leagues/cl.png')}}
-                                        alt=""
-                                        width="60" height="" loading="lazy"
-                                    />
-                                </div>
-                                <h4 class="league__title">Лига чемпионов</h4>
-                                <div class="league__timestamp">
-                                    <time datetime="2023-19-09">19.09.2023</time>&nbsp-&nbsp<time datetime="2024-06-02">02.06.2024</time>
-                                </div>
-                            </label>
-                        </li>
-                    </ul>
+                    <ul class="leagues" id="leagues-list">
+                        @foreach($leagues as $league)
+                            <li class="leagues__item">
+                                <label for="{{ 'league-' . $league['league']['id'] }}" class="league">
+                                    <input class="leagues__input" type="radio" id="{{ 'league-' . $league['league']['id'] }}" name="league">
+                                    <div class="league__img-container">
+                                        <img class="league__img"
+                                             src="{{ $league['league']['logo'] }}"
+                                             alt="{{ $league['league']['name'] }}"
+                                             width="60" height="" loading="lazy"
+                                        />
+                                    </div>
+                                    <h4 class="league__title" title="{{ $league['league']['name'] }}">{{ $league['league']['name'] }}</h4>
+                                    <div class="league__timestamp">
+                                        <time datetime="{{ $league['seasons'][0]['start'] }}">{{ date('d.m.Y', strtotime($league['seasons'][0]['start'])) }}</time>-<time datetime="{{ $league['seasons'][0]['end'] }}">{{ date('d.m.Y', strtotime($league['seasons'][0]['end'])) }}</time>
+                                    </div>
+                                </label>
+                            </li>
+                        @endforeach
+                </ul>
+                    <button id="load-more" data-offset="10">Load More</button>
                 </div>
             </form>
         </main>
@@ -235,5 +209,7 @@
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/hidden-controls.js')
     @vite('resources/js/form.js')
+    @vite('resources/js/pagination-leagues.js')
+
 </body>
 </html>

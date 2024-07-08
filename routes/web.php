@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MainPageController;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,7 @@ Route::get('/draft', [DraftController::class, 'index'])->middleware('auth');
 //Выход из сессии
 Route::get('/logout', [LogoutController::class, 'logout']);
 
+//API
+Route::get('/timezones', [ApiController::class, 'getTimezones']);
+Route::get('/create-tournament', [ApiController::class, 'getLeagues'])->middleware('auth');
+Route::post('/load-more-leagues', [ApiController::class, 'loadMoreLeagues'])->middleware('auth');
