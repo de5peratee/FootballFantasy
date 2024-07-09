@@ -102,6 +102,12 @@ body {
     background-color: var(--color-grey-alternate);
 }
 
+.swiper {
+    display: flex;
+    overflow-x: auto;
+    column-gap: 20px;
+}
+
 /* aside menu styles */
 
 .aside {
@@ -312,12 +318,14 @@ body {
 
 
 .main {
+    position: relative;
     padding-block: 30px;
     padding-inline: var(--content-inline-padding);
     display: flex;
     flex-direction: column;
     row-gap: 40px;
     overflow-y: scroll; 
+    container-type: inline-size;
 }
 
 .banner {
@@ -432,5 +440,92 @@ body {
 @media (max-width: 500px) {
     .content-header__type {
         font-size: inherit;
+    }
+}
+
+
+
+.footer {
+    /* position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0; */
+    width: fit-content;
+    background-color: #3B3D37;
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.footer__list {
+    display: flex;
+    align-items: stretch;
+}
+
+.footer__item {
+    width: fit-content;
+    max-width: 300px;
+    min-height: 60px;
+}
+
+.footer__item:not(:last-child) {
+    border-right: 1px solid var(--color-grey-alternate);
+}
+
+.footer__content {
+    width: 100%;
+    padding: 10px 19px;
+    font-weight: 600;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.footer__button {
+    height: 100%;
+    border: 0;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+@media (hover: hover) {
+    .footer__button:hover {
+        background-color: rgb(221, 221, 221);
+    }
+}
+
+.footer__button:active {
+    background-color: rgb(175, 175, 175);
+}
+
+@media (max-width: 766px) {
+    .footer {
+        width: 100%;
+        border-radius: 0;
+        font-size: 14px;
+    }
+
+    .footer__list {
+        flex-wrap: wrap;   
+    }
+
+    .footer__item {
+        min-height: 0;
+        max-width: none;
+        flex-grow: 1;
+    }
+
+    .footer__item:first-child {
+        flex-basis: 100%;
+        border-bottom: 1px solid var(--color-grey-alternate);
+        border-right: none;
+    }
+
+    .footer__content {
+        padding-block: 10px;
+    }
+
+    .footer__item {
+        border-radius:0;
+        min-height: none;
     }
 }

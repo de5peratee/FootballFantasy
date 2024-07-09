@@ -11,6 +11,8 @@ use App\Http\Controllers\MyTournamentsController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\CreateTournamentController;
 use App\Http\Controllers\DraftController;
+use App\Http\Controllers\FootballersController;
+use App\Http\Controllers\CompareController;
 
 Route::get('/', function () {
     return redirect('/authorization');
@@ -41,6 +43,12 @@ Route::get('/create-tournament', [CreateTournamentController::class, 'index'])->
 
 //Драфт
 Route::get('/draft', [DraftController::class, 'index'])->middleware('auth');
+
+//Просмотр футболистов
+Route::get('/footballers', [FootballersController::class, 'index'])->middleware('auth');
+
+//Сравнение
+Route::get('/compare', [CompareController::class, 'index'])->middleware('auth');
 
 //Выход из сессии
 Route::get('/logout', [LogoutController::class, 'logout']);

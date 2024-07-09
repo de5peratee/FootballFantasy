@@ -98,13 +98,6 @@
     }
 }
 
-.draft__footballer-controls.active-block {
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-    width: 400px;
-}
-
 .draft__footballer-controls--left.active-block {
     left: calc(var(--padding-inline) * (-1));
     top: 50%;
@@ -114,35 +107,4 @@
 .draft__footballer-controls--right.active-block {
     right: 0;
     bottom: 0;
-}
-
-.draft__footballer-controls--right .footballer-controls__img-wrapper {
-    border-top-left-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-.draft__footballer-controls--right .footballer-controls__inf-wrapper {
-    border-bottom-left-radius: var(--border-radius);  
-}
-
-.draft__footballer-controls--right .footballer-controls__buttons {
-    justify-content: flex-end;
-}
-
-.draft__footballer-controls--right .footballer-controls__buttons:first-child {
-    border-bottom-left-radius: var(--border-radius);
-}
-
-
-.draft__footballer-controls--left .footballer-controls__img-wrapper {
-    border-top-right-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-.draft__footballer-controls--left .footballer-controls__inf-wrapper {
-    border-bottom-right-radius: var(--border-radius);  
-}
-
-.draft__footballer-controls--left .footballer-controls__buttons {
-    justify-content: flex-start;
 }

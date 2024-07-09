@@ -85,28 +85,28 @@
             </a>
 
         </main>
-        <footer class="reglament centered">
-                <ul class="reglament__list">
-                    <li class="reglament__item centring-wrapper">
-                        <p class="reglament__content">
+        <footer class="footer centered">
+                <ul class="footer__list">
+                    <li class="footer__item centring-wrapper">
+                        <p class="footer__content">
                             Название турнира
                         </p>
                     </li>
-                    <li class="reglament__item centring-wrapper">
-                        <p class="reglament__content">
+                    <li class="footer__item centring-wrapper">
+                        <p class="footer__content">
                             <time datetime="">06.07.2024 15:30</time>
                         </p>
                     </li>
-                    <li class="reglament__item  centring-wrapper">
-                        <p class="reglament__content">
+                    <li class="footer__item  centring-wrapper">
+                        <p class="footer__content">
                             Турнир начат
                         </p>
                     </li>
-                    <!-- <li class="reglament__item">
-                        <button class="leave-button reglament__content button--white reglament__item centring-wrapper">
+                    <li class="footer__item">
+                        <button class="footer__button footer__content button--white centring-wrapper">
                             Покинуть турнир
                         </button>
-                    </li> -->
+                    </li>
                 </ul>
             </footer>
     </div>
