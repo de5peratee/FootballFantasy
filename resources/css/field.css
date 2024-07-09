@@ -1,0 +1,105 @@
+
+.field {
+    flex-direction: column;
+    align-items: center;
+
+    container-type: size;
+    container-name: field;
+
+    --tactics-height: 54px;
+}
+
+/* когда ширина контейнера достаточно большая растягиваем поле на всю высоту, 
+ширина - автоматически расчитывается из соотношения сторон (aspect-ratio)
+
+когда ширины недостаточно, чтобы растнуть поле на всю высоту и соблюсти соотношение сторон вступает в силу @container-запрос
+растягиваем поле на всю ширину, высота автоматически расчитывается из соотношения сторон */
+
+.field__wrapper {
+    width: fit-content;
+    height: 100%;
+}
+
+.field__body {
+    width: contain;
+    height: calc(100% - var(--tactics-height));
+    aspect-ratio: 0.66;
+
+    display: flex;
+    align-items: end;
+
+    background-image: url(../../public/images/field.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    container-type: inline-size;
+    container-name: field-body
+}
+
+@container field (aspect-ratio < 0.6) {
+    .field__wrapper {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.field__tactics {
+    display: block;
+    width: 90%;
+    max-width: 373px;
+    height: var(--tactics-height);
+    padding-block: 15px;
+    padding-inline: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 0;
+    color: var(--color-black);
+}
+
+.field__option {
+    padding-block: 7px;
+    text-align: center;
+}
+
+.field__footballers-wrapper {
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.field__footballers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.field__card {
+    width: 80px;
+    aspect-ratio: 1;
+    padding: 2px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: #636363;
+}
+
+.field__card.active {
+    border: 3px solid var(--color-accent);
+    padding: 0;
+}
+
+
+@container field-body (max-width: 450px) {
+    .field__card {
+        width: 60px;
+        /* height: 60px; */
+    }
+}
+
+.field__footballer-photo {
+    object-fit: contain;
+    height: 100%;
+}

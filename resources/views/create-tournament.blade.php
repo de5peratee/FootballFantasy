@@ -199,8 +199,8 @@
                                 </label>
                             </li>
                         @endforeach
-                </ul>
-                    <button id="load-more" data-offset="10">Load More</button>
+                    </ul>
+                    <button class="leagues__load-more button--boring button" id="load-more" data-offset="10">Load More</button>
                 </div>
             </form>
         </main>

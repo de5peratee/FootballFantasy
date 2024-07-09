@@ -51,8 +51,10 @@
                         <li class="content-header__type active">Мои турниры</li>
                     </ul>
                     <label class="visually-hidden" for="search"></label>
-                    <div class="content-header__search-box">    
+                    <div class="content-header__search-box search-box">
+                        <label class="visually-hidden" for="search">Поиск турнира</label>
                         <input class="content-header__search input" type="search" id="search" name="search" placeholder="Найти"/>
+                        <button class="content-header__search-controls search-box__controls"></button>
                     </div>
                 </div>
             </header>

@@ -5,6 +5,7 @@
     flex-direction: column;
     row-gap: 24px;
     --border: 1px solid rgb(255, 255, 255, 0.2);
+    container-type: inline-size;
 }
 
 .tournaments__item {
@@ -13,7 +14,7 @@
 
 .tournament {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto;
     background-color: var(--color-transparent-grey);
     border-radius: var(--border-radius);
     font-size: 15px;
@@ -23,7 +24,14 @@
 
 .tournament__title-wrapper {
     position: relative;
+    min-width: 200px;
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+.tournament__author {
     min-width: 0;
+    min-width: 200px;
 }
 
 
@@ -76,7 +84,7 @@
     }
 }
 
-@media (max-width: 766px) {
+@container (max-width: 900px) {
     .tournament {
         grid-template-columns: auto auto;
     }
@@ -85,8 +93,8 @@
         border-right: 0;
     }
 
-    .tournament__title-wrapper {
-        grid-column: span 2;
+    :is(.tournament__title-wrapper, .tournament__author) {
+        grid-column: 1 / -1;
         border-bottom: var(--border);
     }
 }

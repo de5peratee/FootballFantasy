@@ -1,0 +1,163 @@
+
+.footballers {
+    width: 100%;
+    justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    container-type: inline-size;
+}
+
+.footballers__search-box {
+    width: fit-content;
+    --padding: 10px;
+    align-self: end;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.footballers__search {
+    padding: var(--padding);
+    border-radius: 8px;
+}
+
+.footballers__search-controls {
+    top: var(--padding);
+    right: var(--padding);
+}
+
+.footballers__wrapper {
+    position: relative;
+    overflow-y: auto;
+}
+
+.footballers__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 141px);
+    justify-content: space-between;
+    column-gap: 14px;
+    row-gap: 30px;
+    overflow-y: auto;
+}
+
+.footballers__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footballers__img-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-grey);
+    overflow: hidden;
+}
+
+.footballers__img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.footballers__name {
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+@container (max-width: 500px) {
+    .footballers__list {
+        grid-template-columns: repeat(auto-fit, 125px);
+    }
+}
+
+
+
+.footballer-controls {
+    position: fixed;
+    display: none;
+    --footballer-padding-inline: 50px; 
+    overflow: auto;
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    .footballer-controls__-img {
+        width: 120px;
+    }
+}
+
+.footballer-controls__img-wrapper {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-image: url(../../public/images/russia.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footballer-controls__img {
+    margin-inline: auto;
+}
+
+.footballer-controls__inf-wrapper {
+    background-color: var(--color-grey);
+    padding-bottom: 10px;
+}
+
+.footballer-controls__title, .footballer-controls__price {
+    padding-block: 12px;
+    padding-inline: var(--footballer-padding-inline);
+    text-align: center;
+}
+
+.footballer-controls__inf {
+    padding-block: 4px;
+    padding-inline: var(--footballer-padding-inline);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footballer-controls__buttons {
+    display: flex;
+}
+
+.footballer-controls__button {
+    padding: 13px;
+}
+
+.footballer-controls__button--white {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+@media (hover: hover) {
+    .footballer-controls__button--white:hover {
+        background-color: rgb(221, 221, 221);
+    }   
+}
+
+.footballer-controls__button--white:active {
+    background-color: var(--color-grey-alternate);
+    color: var(--color-black);
+}
+
+.footballer-controls__button--grey {
+    background-color: #3F4038;
+    color: var(--color-white);
+}
+
+@media (hover: hover) {
+    .footballer-controls__button--grey:hover {
+        background-color: #30312b;
+    }
+}
+
+.footballer-controls__button--grey:active {
+    background-color: #252521;
+}
+
+.fooballer-controls__accent-text {
+    color: var(--color-accent);
+}

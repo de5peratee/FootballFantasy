@@ -74,13 +74,13 @@ body {
 }
 
 .button {
-  padding-inline: 10px;
-  text-align: center;
-  border: 1px solid;
-  border-radius: var(--border-radius-small);
-  background-color: transparent;
+  border: 0;
+  padding: 0;
 }
 
+.select__item {
+  width: 100%;
+}
 
 @media (hover: hover) {
   .button:hover {

@@ -23,7 +23,7 @@ $(document).ready(function() {
                     var leagueItem = `
                         <li class="leagues__item">
                             <label for="league-${league.league.id}" class="league">
-                                <input class="visually-hidden" type="radio" id="league-${league.league.id}" name="league">
+                                <input class="leagues__input" type="radio" id="league-${league.league.id}" name="league">
                                 <div class="league__img-container">
                                     <img class="league__img"
                                          src="${league.league.logo}"

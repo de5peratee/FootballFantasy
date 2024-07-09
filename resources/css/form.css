@@ -95,8 +95,9 @@ form {
 .league {
     border-radius: var(--border-radius);
     height: 150px;
+    max-height: 150px;
     aspect-ratio: 1;
-    padding: 16px 3px;
+    padding: 3px 3px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -109,10 +110,10 @@ form {
 .league__title {
     color: var(--color-black);
     font-size: 15px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     max-width: 120px;
+    max-height: 54px;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 
@@ -127,6 +128,10 @@ form {
 
 .leagues__input {
     display: none;
+}
+
+.leagues__load-more {
+    margin-top: 20px;
 }
 
 @media (max-width: 1439px) {

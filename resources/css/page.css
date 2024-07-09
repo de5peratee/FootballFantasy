@@ -50,8 +50,11 @@ body {
 }
 
 .button--boring {
+    padding: 4px 10px;
     background-color: var(--color-grey);
     color: var(--color-white);
+    border: 1px solid currentColor;
+    border-radius: 4px;
 }
 
 @media (hover: hover) {
@@ -76,6 +79,27 @@ body {
 
 .input:focus {
     border-color: var(--color-white);
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box__controls {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url(../../public/images/search.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+.search-box__controls:hover {
+    background-color: var(--color-grey-alternate);
 }
 
 /* aside menu styles */
@@ -255,7 +279,7 @@ body {
     justify-content: space-between;
     align-items: center;
     column-gap: 10px;
-    row-gap: 20px;
+    row-gap: 10px;
     border-bottom: 1px solid rgb(255, 255, 255, 0.7);
 }
 
@@ -282,12 +306,12 @@ body {
     .header__title {
         flex-basis: 100%;
         order: 1;
+        font-size: 20px;
     }
 }
 
 
 .main {
-    height: 100%;
     padding-block: 30px;
     padding-inline: var(--content-inline-padding);
     display: flex;
@@ -376,12 +400,6 @@ body {
     font-size: 32px;
 }
 
-.content-header__button {
-    padding: 4px 10px;
-    border: 1px solid currentColor;
-    border-radius: 4px;
-}
-
 .content-header__type-list {
     display: flex;
     column-gap: 10px;
@@ -397,32 +415,18 @@ body {
     border-bottom: 1px solid var(--color-accent);
 }
 
-.search-box {
-    position: relative;
-}
 
-.search-box__controls {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    background-image: url(../../public/images/search.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 0;
-    background-color: transparent;
-    border-radius: 2px;
-}
-
-.search-box__controls:hover {
-    background-color: var(--color-grey-alternate);
-}
 
 .content-header__search {
-    padding: var(--padding-block);
+    padding: 4px;
     display: flex;
     justify-content: space-between;
     border-radius: 4px;
+}
+
+.content-header__search-controls {
+    right: 4px;
+    top: 4px;
 }
 
 @media (max-width: 500px) {
