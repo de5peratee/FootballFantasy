@@ -40,6 +40,9 @@ Route::get('/tournament', [TournamentController::class, 'index'])->middleware('a
 
 //Создание турнира
 Route::get('/create-tournament', [CreateTournamentController::class, 'index'])->middleware('auth');
+Route::post('/create-tournament', [CreateTournamentController::class, 'store'])->middleware('auth');
+Route::post('/validate-field', [CreateTournamentController::class, 'validateField'])->name('validate-field');
+
 
 //Драфт
 Route::get('/draft', [DraftController::class, 'index'])->middleware('auth');
@@ -57,3 +60,5 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/timezones', [ApiController::class, 'getTimezones']);
 Route::get('/create-tournament', [ApiController::class, 'getLeagues'])->middleware('auth');
 Route::post('/load-more-leagues', [ApiController::class, 'loadMoreLeagues'])->middleware('auth');
+Route::get('/search-leagues', [ApiController::class, 'searchLeagues'])->middleware('auth');
+

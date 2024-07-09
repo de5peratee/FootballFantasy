@@ -17,17 +17,19 @@
             <div class="header__controls centring-wrapper">
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
                     <span class="burger__decor"></span>
-                </button>  
+                </button>
                 <a class="header__logo-link" href="/main_page">
                     <img class="header__logo"
                         src={{asset('images/mini-logo.svg')}}
                         alt="football fantasy logo"
                         width="39" height="39" loading="lazy"
                     />
-                </a>   
+                </a>
             </div>
-            <h2 class="header__title clip-text">Главная</h2>   
-            <time class="header__timer">11:48</time>
+            <h2 class="header__title clip-text">Главная</h2>
+            <time class="header__timer">
+                <span id="current-time"></span>
+            </time>
         </header>
         <a href="/logout" style="font-size: 100px; ">Разлогиниться</a>
         <a href="/draft" style="font-size: 100px;">Draft</a>
@@ -35,5 +37,6 @@
 
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/hidden-controls.js')
+    @vite('resources/js/timer.js')
 </body>
 </html>

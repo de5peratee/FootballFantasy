@@ -18,7 +18,10 @@ export default defineConfig({
                 'resources/js/hidden-controls.js',
                 'resources/js/form.js',
                 'resources/js/pagination-leagues.js',
-                'resources/js/activate-action.js'
+                'resources/js/activate-action.js',
+                'resources/js/create-tournament-validation.js',
+                'resources/js/leagues-search.js',
+                'resources/js/timer.js',
             ],
             refresh: true,
         }),

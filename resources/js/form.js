@@ -1,7 +1,6 @@
-
 document.addEventListener('click', function(event) {
     let btn = event.target.closest('[data-action]');
-    
+
     if (!btn) return
 
     let action = btn.dataset.action;

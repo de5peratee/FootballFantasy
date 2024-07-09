@@ -12,10 +12,11 @@ class User extends Authenticatable
 {
     protected $table = 'users';
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'tournaments_counter',
-        'wins_counter'
+        'login', 'email', 'password', 'tournaments_counter', 'wins_counter', 'balance',
     ];
+
+    public function tournaments()
+    {
+        return $this->hasMany(Tournament::class, 'creatorID');
+    }
 }

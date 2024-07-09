@@ -1,9 +1,8 @@
-
 document.addEventListener('click', function(event) {
     const isTouchDevice = !!('ontouchstart' in window || navigator.maxTouchPoints)
 
     if (!isTouchDevice) return
-    
+
     let wrapper = event.target.closest('[data-control-container]')
 
     if (wrapper) {

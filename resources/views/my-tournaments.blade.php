@@ -17,22 +17,24 @@
             <div class="header__controls centring-wrapper">
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
                     <span class="burger__decor"></span>
-                </button>  
+                </button>
                 <a class="header__logo-link" href="/main_page">
                     <img class="header__logo"
                         src={{asset('images/mini-logo.svg')}}
                         alt="football fantasy logo"
                         width="39" height="39" loading="lazy"
                     />
-                </a>   
+                </a>
             </div>
-            <h2 class="header__title clip-text">Лето 2024</h2>   
-            <time class="header__timer">11:48</time>
+            <h2 class="header__title clip-text">Лето 2024</h2>
+            <time class="header__timer">
+                <span id="current-time"></span>
+            </time>
         </header>
         <main class="main">
             <section class="banner">
                 <h2 class="banner__title">Лето <br/>2024</h2>
-                    
+
                 <div class="banner__content">
                     <a class="button--light banner__button" href="/create-tournament">
                         Создать турнир
@@ -55,26 +57,33 @@
                 </div>
             </header>
             <section class="tournaments">
+                <h2 class="visually-hidden">Список турниров</h2>
                 <ul class="tournaments__list">
-                <li class="tournaments__item tournament" data-control-container>
-                        <div class="tournament__title-wrapper tournament__item-wrapper">
-                            <h3 class="tournament__title clip-text">
-                                Название турнираnlisnscdvsdbvabdkjvbadfbasd,kvnkjbkjb
-                            </h3>
-                            <a class="tournament__link" href="/tournament" data-hidden-control>
-                                Перейти
-                            </a>
-                        </div>
-                        <div class="tournament__item-wrapper tournament__author">
-                            <span class="clip-text"><span class="tournament__thin-text">Создатель:</span>&nbsp<span class="tournament__author">@nicknamea;ljfoiowajfijeoifjwoijjfiaejflieliufienfliue liuaffl iaelfih il ffaihf liua f f</span></span>
-                        </div>
-                        <div class="tournament__item-wrapper">
-                            <time class="tournament__start-time" datetime="2024-07-08 15:30">08.07.2024 <span class="tournament__thin-text">15:30</span></time>
-                        </div>
-                        <div class="tournament__item-wrapper">
-                            <span class="tournament__thin-text">До начала</span>&nbsp<time class="tournament__timestamp"> 1д 8ч 15м 30с</time>
-                        </div>
-                    </li>
+                    @foreach($tournaments as $tournament)
+                        <li class="tournaments__item tournament" data-control-container>
+                            <div class="tournament__title-wrapper tournament__item-wrapper">
+                                <h3 class="tournament__title clip-text">
+                                    {{ $tournament->name }}
+                                </h3>
+                                <a class="tournament__link" href="/tournament/{{ $tournament->id }}" data-hidden-control>
+                                    Перейти
+                                </a>
+                            </div>
+                            <div class="tournament__item-wrapper tournament__author">
+                                <span class="clip-text">
+                                    <span class="tournament__thin-text">Создатель:</span>&nbsp;
+                                    <span class="tournament__author">{{ $tournament->creator->login }}</span>
+                                </span>
+                            </div>
+                            <div class="tournament__item-wrapper">
+                                <time class="tournament__start-time" datetime="{{ $tournament->date }}">{{ $tournament->date }}</time>
+                            </div>
+                            <div class="tournament__item-wrapper">
+                                <span class="tournament__thin-text">До начала</span>&nbsp;
+                                <time class="tournament__timestamp" data-start-datetime="{{ $tournament->date }}"></time>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
             </section>
         </main>
@@ -82,5 +91,6 @@
 
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/hidden-controls.js')
+    @vite('resources/js/timer.js')
 </body>
 </html>
