@@ -14,7 +14,7 @@
 
 .tournament {
     display: grid;
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: 1fr auto auto auto auto;
     background-color: var(--color-transparent-grey);
     border-radius: var(--border-radius);
     font-size: 15px;
@@ -30,10 +30,12 @@
 }
 
 .tournament__author {
-    min-width: 0;
     min-width: 200px;
 }
 
+.tournament__status {
+    min-width: 200px;
+}
 
 .tournament__item-wrapper {
     min-height: 56px;
@@ -97,4 +99,9 @@
         grid-column: 1 / -1;
         border-bottom: var(--border);
     }
+}
+
+.tournament__timestamp {
+    width: 120px;
+    display: inline-block;
 }

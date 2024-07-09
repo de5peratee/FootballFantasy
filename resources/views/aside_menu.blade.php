@@ -10,8 +10,10 @@
                 />
             </div>
             <span class="aside__username clip-text">
-                @nickname
+                {{ '@' . auth()->user()->login }}
             </span>
+
+
         </a>
     </header>
     <nav class="aside__nav">

@@ -86,6 +86,19 @@ form {
     color: red;
 }
 
+.form__input {
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.form__input.valid {
+    border-color: green;
+}
+
+.form__input.invalid {
+    border-color: red;
+}
+
 .leagues {
     display: inline-flex;
     flex-wrap: wrap;
@@ -125,6 +138,7 @@ form {
 .league:has(input:checked) {
     border: 6px solid var(--color-accent);
 }
+
 
 .leagues__input {
     display: none;

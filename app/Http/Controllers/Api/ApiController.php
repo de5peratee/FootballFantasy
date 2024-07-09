@@ -96,4 +96,17 @@ class ApiController extends Controller
             }
         }
     }
+
+    //Поиск лиг
+    public function searchLeagues(Request $request)
+    {
+        $searchText = $request->input('search');
+        $currentLeagues = $this->fetchLeagues();
+
+        $filteredLeagues = array_filter($currentLeagues, function($league) use ($searchText) {
+            return stripos($league['league']['name'], $searchText) !== false;
+        });
+
+        return response()->json(array_values($filteredLeagues));
+    }
 }

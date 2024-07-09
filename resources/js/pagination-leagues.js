@@ -19,29 +19,34 @@ $(document).ready(function() {
             success: function(response) {
                 var leaguesList = $('#leagues-list');
 
-                $.each(response, function(index, league) {
-                    var leagueItem = `
-                        <li class="leagues__item">
-                            <label for="league-${league.league.id}" class="league">
-                                <input class="leagues__input" type="radio" id="league-${league.league.id}" name="league">
-                                <div class="league__img-container">
-                                    <img class="league__img"
-                                         src="${league.league.logo}"
-                                         alt="${league.league.name}"
-                                         width="60" height="60" loading="lazy"
-                                    />
-                                </div>
-                                <h4 class="league__title" title="${league.league.name}">${league.league.name}</h4>
-                                <div class="league__timestamp">
-                                    <time datetime="${league.seasons[0].start}">${new Date(league.seasons[0].start).toLocaleDateString()}</time>-<time datetime="${league.seasons[0].end}">${new Date(league.seasons[0].end).toLocaleDateString()}</time>
-                                </div>
-                            </label>
-                        </li>
-                    `;
-                    leaguesList.append(leagueItem);
-                });
+                if (response.length > 0) {
+                    $.each(response, function(index, league) {
+                        var leagueItem = `
+                            <li class="leagues__item">
+                                <label for="league-${league.league.id}" class="league">
+                                    <input class="leagues__input" type="radio" id="league-${league.league.id}" name="league">
+                                    <div class="league__img-container">
+                                        <img class="league__img"
+                                             src="${league.league.logo}"
+                                             alt="${league.league.name}"
+                                             width="60" height="60" loading="lazy"
+                                        />
+                                    </div>
+                                    <h4 class="league__title" title="${league.league.name}">${league.league.name}</h4>
+                                    <div class="league__timestamp">
+                                        <time datetime="${league.seasons[0].start}">${new Date(league.seasons[0].start).toLocaleDateString()}</time> -
+                                        <time datetime="${league.seasons[0].end}">${new Date(league.seasons[0].end).toLocaleDateString()}</time>
+                                    </div>
+                                </label>
+                            </li>
+                        `;
+                        leaguesList.append(leagueItem);
+                    });
 
-                $('#load-more').data('offset', offset + 10);
+                    $('#load-more').data('offset', offset + 10);
+                } else {
+                    $('#load-more').hide();
+                }
             },
             error: function(error) {
                 console.log(error);
