@@ -22,6 +22,7 @@ export default defineConfig({
                 'resources/js/create-tournament-validation.js',
                 'resources/js/leagues-search.js',
                 'resources/js/timer.js',
+                'resources/js/modal-password.js',
             ],
             refresh: true,
         }),
