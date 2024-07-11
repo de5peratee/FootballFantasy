@@ -69,7 +69,7 @@
 @media (hover: hover) {
     .footballers__img-wrapper:hover {
         background-color: var(--color-transparent-grey);
-    }    
+    }
 }
 
 .footballers__img-wrapper:active {
@@ -106,7 +106,7 @@
     width: 320px;
     min-width: 270px;
     display: none;
-    --footballer-padding-inline: 50px; 
+    --footballer-padding-inline: 50px;
     z-index: 1;
 }
 
@@ -135,7 +135,7 @@
 }
 
 .footballer-controls--right .footballer-controls__inf-wrapper {
-    border-bottom-left-radius: var(--border-radius);  
+    border-bottom-left-radius: var(--border-radius);
 }
 
 .footballer-controls--right .footballer-controls__buttons {
@@ -153,7 +153,7 @@
 }
 
 .footballer-controls--left .footballer-controls__inf-wrapper {
-    border-bottom-right-radius: var(--border-radius);  
+    border-bottom-right-radius: var(--border-radius);
 }
 
 .footballer-controls--left .footballer-controls__buttons {
@@ -210,7 +210,7 @@
 @media (hover: hover) {
     .footballer-controls__button--white:hover {
         background-color: rgb(221, 221, 221);
-    }   
+    }
 }
 
 .footballer-controls__button--white:active {

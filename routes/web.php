@@ -32,9 +32,11 @@ Route::get('/main_page', [MainPageController::class, 'index'])->middleware('auth
 
 //Все турниры
 Route::get('/all-tournaments', [AllTournamentsController::class, 'index'])->middleware('auth');
+Route::post('/all-tournaments', [AllTournamentsController::class, 'join'])->middleware('auth');
+Route::get('/join-tournament/{tournamentId}', [AllTournamentsController::class, 'joinWithoutPassword'])->middleware('auth');
 
 //Мои турниры
-Route::get('/my-tournaments', [MyTournamentsController::class, 'index'])->middleware('auth');
+Route::get('/my-tournaments', [MyTournamentsController::class, 'index'])->middleware('auth')->name('my-tournaments');
 
 //Турнир
 Route::get('/tournament', [TournamentController::class, 'index'])->middleware('auth');
@@ -60,7 +62,7 @@ Route::get('/team', [TeamController::class, 'index'])->middleware('auth');
 //Выход из сессии
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-//API
+//API лиги
 Route::get('/timezones', [ApiController::class, 'getTimezones']);
 Route::get('/create-tournament', [ApiController::class, 'getLeagues'])->middleware('auth');
 Route::post('/load-more-leagues', [ApiController::class, 'loadMoreLeagues'])->middleware('auth');

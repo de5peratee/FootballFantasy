@@ -56,7 +56,7 @@ class ApiController extends Controller
     }
 
     //Получение лиг
-    private function fetchLeagues()
+    public function fetchLeagues()
     {
         $curl = curl_init();
 

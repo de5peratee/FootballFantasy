@@ -3,10 +3,9 @@ $(document).ready(function() {
         var fieldName = input.attr('name');
         var fieldValue = input.val();
 
-        // Отправка асинхронного запроса на сервер
         $.ajax({
             type: 'POST',
-            url: "/validate-field", // Путь к вашему методу валидации на сервере
+            url: "/validate-field",
             data: {
                 fieldName: fieldName,
                 fieldValue: fieldValue
