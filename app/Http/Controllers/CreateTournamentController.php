@@ -68,6 +68,7 @@ class CreateTournamentController extends Controller
         $tournament->iteration = $request->input('iteration-cnt');
         $tournament->participant = $request->input('members-cnt');
         $tournament->timer = $request->input('timer');
+        $password = $request->input('password');
         if (!empty($password)) {
             $tournament->password = bcrypt($password);
         } else {

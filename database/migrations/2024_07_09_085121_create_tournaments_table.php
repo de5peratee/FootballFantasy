@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('iteration');
             $table->integer('participant');
             $table->integer('timer');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->integer('league');
             $table->timestamps();
         });
