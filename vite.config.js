@@ -23,7 +23,8 @@ export default defineConfig({
                 'resources/js/leagues-search.js',
                 'resources/js/timer.js',
                 'resources/js/modal-password.js',
-                'resources/js/tactics-dropdown.js'
+                'resources/js/tactics-dropdown.js',
+                'resources/js/select-tactics.js'
             ],
             refresh: true,
         }),

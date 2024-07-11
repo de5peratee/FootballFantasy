@@ -65,15 +65,15 @@
                                 <h3 class="tournament__title clip-text">
                                     {{ $tournament->name }}
                                 </h3>
-                                <a class="tournament__link" href="/tournament/{{ $tournament->id }}" data-hidden-control>
+                                <a class="tournament__link" href="/draft/{{ $tournament->id }}" data-hidden-control>
                                     Перейти
                                 </a>
                             </div>
                             <div class="tournament__item-wrapper tournament__author">
-                                <span class="clip-text">
-                                    <span class="tournament__thin-text">Создатель:</span>&nbsp;
-                                    <span class="tournament__author">{{ $tournament->creator->login }}</span>
-                                </span>
+            <span class="clip-text">
+                <span class="tournament__thin-text">Создатель:</span>&nbsp;
+                <span class="tournament__author">{{ $tournament->creator->login }}</span>
+            </span>
                             </div>
                             <div class="tournament__item-wrapper">
                                 <time class="tournament__start-time" datetime="{{ $tournament->date }}">{{ $tournament->date }}</time>

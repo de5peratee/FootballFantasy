@@ -48,7 +48,7 @@ Route::post('/validate-field', [CreateTournamentController::class, 'validateFiel
 
 
 //Драфт
-Route::get('/draft', [DraftController::class, 'index'])->middleware('auth');
+Route::get('/draft/{id}', [DraftController::class, 'index'])->middleware('auth')->name('draft.index');
 
 //Просмотр футболистов
 Route::get('/footballers', [FootballersController::class, 'index'])->middleware('auth');
