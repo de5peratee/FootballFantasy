@@ -193,7 +193,7 @@
             
             <div class="draft__inf draft__inf--top centring-wrapper draft__inf--fullsize">
                 <!-- Мне кажется логичнее указывать суммарную стоимость всех футболистов, а не сколько осталось бюджета -->
-                Стоимость команды:&nbsp <span class="draft__accent-text draft__accent-text--light">&dollar;288.231M</span>
+                Стоимость команды:&nbsp <span class="draft__accent-text accent-text--light">&dollar;288.231M</span>
             </div>
             <div class="draft__list-wrapper">
                 <ul class="list draft__list centered">

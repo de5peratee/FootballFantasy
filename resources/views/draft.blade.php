@@ -312,7 +312,7 @@
             </section>
             <h2 class="visually-hidden">Информация и поиск футболистов</h2>
             <header class="draft__inf draft__inf--top centring-wrapper">
-                Оставшийся бюджет:&nbsp<span class="draft__accent-text draft__accent-text--light">45000&dollar;</span>
+                Оставшийся бюджет:&nbsp<span class="draft__accent-text accent-text--light">45000&dollar;</span>
             </header>
             <div class="footballers">
                 <div class="footballers__search-box search-box">
@@ -554,7 +554,7 @@
                 </div>
             </div>
             <footer class="draft__inf draft__inf--bottom centring-wrapper">
-                Оставшееся время:&nbsp<span class="draft__accent-text draft__accent-text--red"><time class="controls__time" id="rest-time">30</time> секунд</span>
+                Оставшееся время:&nbsp<span class="draft__accent-text accent-text--red"><time class="controls__time" id="rest-time">30</time> секунд</span>
             </footer>
         </main>
     </div>

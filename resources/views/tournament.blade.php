@@ -70,9 +70,9 @@
                             loading="lazy"
                         />
                         <div class="player__controls" data-hidden-control>
-                            <div class="player__inf player__inf--top">
+                            <button class="player__inf player__inf--top button" data-action="show-modal" data-modal-id="player-inf">
                                 Профиль
-                            </div>
+                            </button>
                             <a class="player__inf player__inf--bottom" href="./team">
                                 Команда
                             </a>
@@ -89,29 +89,55 @@
 
         </main>
         <footer class="footer centered">
-                <ul class="footer__list">
-                    <li class="footer__item centring-wrapper">
-                        <p class="footer__content">
-                            Название турнира
-                        </p>
-                    </li>
-                    <li class="footer__item centring-wrapper">
-                        <p class="footer__content">
-                            <time datetime="">06.07.2024 15:30</time>
-                        </p>
-                    </li>
-                    <li class="footer__item  centring-wrapper">
-                        <p class="footer__content">
-                            Турнир начат
-                        </p>
-                    </li>
-                    <li class="footer__item">
-                        <button class="footer__button footer__content button--white centring-wrapper">
-                            Покинуть турнир
-                        </button>
-                    </li>
-                </ul>
-            </footer>
+            <ul class="footer__list">
+                <li class="footer__item centring-wrapper">
+                    <p class="footer__content">
+                        Название турнира
+                    </p>
+                </li>
+                <li class="footer__item centring-wrapper">
+                    <p class="footer__content">
+                        <time datetime="">06.07.2024 15:30</time>
+                    </p>
+                </li>
+                <li class="footer__item  centring-wrapper">
+                    <p class="footer__content">
+                        Турнир начат
+                    </p>
+                </li>
+                <li class="footer__item">
+                    <button class="footer__button footer__content button--white centring-wrapper">
+                        Покинуть турнир
+                    </button>
+                </li>
+            </ul>
+        </footer>
+        
+    </div>
+    <div class="player-inf" id="player-inf">
+        <button class="player-inf__close button" data-action="close-modal"></button>
+        <header class="player-inf__header">
+            <div class="player-inf__header-background">
+                <img class="player-inf__header-background-img" 
+                    src={{asset('images/auth-background.png')}} 
+                    alt="" 
+                    loading="lazy"
+                />
+            </div>
+            <div class="player-inf__img-wrapper centered">
+                <img class="player-inf__img"
+                    src={{asset('images/auth-background.png')}}
+                />
+            </div>
+        </header>
+        <h3 class="player-inf__nickname centring-wrapper">
+            Вася Повелитель Пива
+        </h3>
+        <button class="player-inf__button button--light centered">Отправить сообщение</button>
+        <div class="player-inf__stats-list">
+            <div class="player-inf__stat centring-wrapper"><span>Сыграно турниров:<br/><span class="accent-text--light">0</span></span></div>
+            <div class="player-inf__stat centring-wrapper"><span>Процент побед:<br/><span class="accent-text--light">0%</span></span></div>
+        </div>
     </div>
 
     @vite('resources/js/modal-menu.js')

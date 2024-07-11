@@ -34,6 +34,7 @@
         <a href="/logout" style="font-size: 100px; ">Разлогиниться</a>
         <a href="/draft" style="font-size: 100px;">Draft</a>
         <a href="/team" style="font-size: 100px;">Team</a>
+        <a href="/tournament" style="font-size: 100px;">Tournament</a>
     </div>
 
     @vite('resources/js/modal-menu.js')

@@ -108,6 +108,14 @@ body {
     column-gap: 20px;
 }
 
+.accent-text--light {
+    color: var(--color-accent);
+}
+
+.accent-text--red {
+    color: #F67F65;
+}
+
 /* aside menu styles */
 
 .aside {

@@ -164,7 +164,7 @@
 .footballer-controls__img-wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-image: url(../../public/images/russia.svg);
+    background-image: url(../../public/images/auth-background.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

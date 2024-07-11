@@ -39,14 +39,6 @@
     font-weight: 400;
 }
 
-.draft__accent-text--light {
-    color: var(--color-accent);
-}
-
-.draft__accent-text--red {
-    color: #F67F65;
-}
-
 .draft__list-wrapper {
     overflow: auto;
 }
