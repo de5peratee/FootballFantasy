@@ -11,7 +11,7 @@
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
     @vite(['resources/css/footballers.css'])
-    
+
 </head>
 <body>
 @include('aside_menu')
@@ -29,27 +29,6 @@
                         width="39" height="39" loading="lazy"
                     />
                 </a>
-            </div>
-            <h2 class="header__title clip-text">Лето 2024</h2>
-            <time class="header__timer">
-                <span id="current-time"></span>
-            </time>
-        </header>
-        <main class="main">
-            <div class="footballers">
-                <div class="footballers__header">
-                    <h2 class="footballers__title">
-                        Футболисты
-                    </h2>
-                    <div class="footballers__search-box search-box">
-                        <label for="fotballers-search" class="visually-hidden">Поиск по футболистам</label>
-                        <input class="footballers__search input" type="search" id="footballers-search" name="footballers-search" placeholder="Найти футболиста"/>
-                        <button class="footballers__search-controls search-box__controls"></button>
-                    </div>
-                </div>
-                width="39" height="39" loading="lazy"
-                />
-            </a>
         </div>
         <h2 class="header__title clip-text">Лето 2024</h2>
         <time class="header__timer">
