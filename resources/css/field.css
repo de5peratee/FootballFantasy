@@ -43,6 +43,11 @@
         width: 100%;
         height: auto;
     }
+
+    .field__body {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .field__tactics {

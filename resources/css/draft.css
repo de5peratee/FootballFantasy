@@ -8,7 +8,7 @@
     --padding-inline: 60px;
     padding-inline: var(--padding-inline);
     align-items: stretch;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .field {
@@ -33,6 +33,7 @@
     border-top-right-radius: 20px;
 }
 
+
 .draft__accent-text {
     font-size: 20px;
     font-weight: 400;
@@ -45,6 +46,17 @@
 .draft__accent-text--red {
     color: #F67F65;
 }
+
+.draft__list-wrapper {
+    overflow: auto;
+}
+
+.draft__list {
+    max-width: 300px;
+    height: fit-content;
+    background-color: var(--color-grey);
+}
+
 
 
 @media (max-width: 766px) {
@@ -61,6 +73,10 @@
         width: 50%;
         border-radius: 0;
         font-size: 14px;
+    }
+
+    .draft__inf--fullsize {
+        width: 100%;
     }
 
     .draft__accent-text {
@@ -87,6 +103,10 @@
         height: 80vh;
         min-height: 600px;
         overflow-y: auto;
+    }
+
+    .draft__list-wrapper {
+        overflow: visible;
     }
 }
 

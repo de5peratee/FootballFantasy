@@ -150,11 +150,11 @@ body {
     scrollbar-width: 0;
 }
 
-.aside__item-wrapper {
+.list__item-wrapper {
     border-bottom: 1px solid rgb(255, 255, 255, 0.1); 
 }
 
-.aside-item {
+.list-item {
     width: 100%;
     max-width: 100%;
     padding-block: 15px;
@@ -166,40 +166,40 @@ body {
     border: 0;
 }
 
-.aside-item:hover {
+.list-item:hover {
     color: var(--color-black);
     background-color: var(--color-accent);
 }
 
-.aside-item:disabled {
+.list-item:disabled {
     color: var(--color-grey-alternate);
 }
 
-.aside-item--text {
+.list-item--text {
     justify-content: center;
     text-align: center;
     background-color: var(--color-grey-alternate);
     color: var(--color-black);
 }
 
-.aside-item--text:hover {
+.list-item--text:hover {
     background-color: var(--color-grey-alternate);
 }
 
-.aside-item__svg-wrapper {
+.list-item__svg-wrapper {
     width: 20px;
     flex-shrink: 0;
 }
 
-.aside-item__svg--stroked {
+.list-item__svg--stroked {
     stroke: currentColor;
 }
 
-.aside-item__svg--filled {
+.list-item__svg--filled {
     fill: currentColor;
 }
 
-.aside-item__name {
+.list-item__name {
     display: block;
     max-width: 100%;
     hyphens: auto;

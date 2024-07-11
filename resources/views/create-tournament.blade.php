@@ -58,7 +58,6 @@
                 </div>
             </header>
 
-            <!-- action и method пока пустые -->
             <form class="form" id="tournament" action="/create-tournament" method="POST">
                 @csrf
                 <h2 class="visually-hidden">Форма создания турнира</h2>
