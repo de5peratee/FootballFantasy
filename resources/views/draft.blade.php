@@ -11,7 +11,7 @@
     @vite(['resources/css/footballers.css'])
     @vite(['resources/css/draft.css'])
 </head>
-<body>    
+<body>
     <aside class="aside" id="aside-menu">
         <header class="aside__header">
             <a href="" class="aside__header-link">
@@ -154,16 +154,16 @@
             <div class="header__controls centring-wrapper">
                 <button class="burger" data-action="show-modal" data-modal-id="aside-menu">
                     <span class="burger__decor"></span>
-                </button>  
+                </button>
                 <a class="header__logo-link" href="/main_page">
                     <img class="header__logo"
                         src={{asset('images/mini-logo.svg')}}
                         alt="football fantasy logo"
                         width="39" height="39" loading="lazy"
                     />
-                </a>   
+                </a>
             </div>
-            <h2 class="header__title clip-text">Вы набираете команду</h2>   
+            <h2 class="header__title clip-text">Вы набираете команду</h2>
             <time class="header__timer">11:48</time>
         </header>
         <main class="draft">
@@ -180,101 +180,13 @@
                     </div>
                     <div class="field__body">
                         <div class="field__footballers-wrapper">
-                            <ul class="field__footballers " id="attackers">
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="show-block" data-target-id="field-footballer" data-name="search-footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/player.jfif')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                            </ul>
-                            <ul class="field__footballers" id="midfielders">
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                            </ul>
-                            <ul class="field__footballers" id="defenders">
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="field__card-wrapper">
-                                    <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
-                                    </button>
-                                </li>
-                            </ul>
+                            <ul class="field__footballers" id="attackers"></ul>
+                            <ul class="field__footballers" id="midfielders"></ul>
+                            <ul class="field__footballers" id="defenders"></ul>
                             <ul class="field__footballers" id="goalkeeper">
                                 <li class="field__card-wrapper">
                                     <button class="field__card" data-action="activate-me" data-name="footballer">
-                                        <img class="field__footballer-photo"
-                                            src={{asset('images/avatar.svg')}}
-                                            alt=""
-                                            width="80" height="80" loading="lazy"
-                                        />
+                                        <img class="field__footballer-photo" src="{{ asset('images/avatar.svg') }}" alt="" width="80" height="80" loading="lazy" />
                                     </button>
                                 </li>
                             </ul>
@@ -284,9 +196,9 @@
                 <!-- чтобы этот блок с инфой появился нужно указать какой-нибудь кнопке -->
                 <div class="draft__footballer-controls--left footballer-controls--fixed footballer-controls--left footballer-controls--mid footballer-controls" id="field-footballer">
                     <div class="footballer-controls__img-wrapper">
-                        <img class="footballer-controls__img" 
-                            src={{asset('images/avatar.svg')}} 
-                            alt="" 
+                        <img class="footballer-controls__img"
+                            src={{asset('images/avatar.svg')}}
+                            alt=""
                             height="143" loading="lazy"
                         />
                     </div>
@@ -322,234 +234,48 @@
                 </div>
                 <div class="footballers__wrapper">
                     <div class="footballers__list">
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                        <article class="footballers__card">
-                            <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="search-footballer">
-                                <img class="footballers__img"
-                                    src={{asset('images/auth-background.png')}}
-                                    alt=""
-                                    loading="lazy"
-                                />
-                            </button>
-                            <h3 class="footballers__name clip-text">Вася-жоский-удар 228</h3>
-                        </article>
-                    </div>
-                    <div class="footballer-controls--right footballer-controls--fixed footballer-controls--mid footballer-controls" id="footballer-controls">
-                        <div class="footballer-controls__img-wrapper">
-                            <img class="footballer-controls__img" 
-                                src={{asset('images/avatar.svg')}} 
-                                alt="" 
-                                height="143" loading="lazy"
-                            />
-                        </div>
-                        <div class="footballer-controls__inf-wrapper">
-                            <h3 class="footballer-controls__title">Имя футболиста <br/>в две строки как-то</h3>
-                            <div class="footballer-controls__price fooballer-controls__accent-text">45000&dollar;</div>
-                            <div class="footballer-controls__inf"><span>Голы</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Удары</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Ключевые пасы</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Ассисты</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Поймано</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Отборы</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Желтные карточки</span><span class="fooballer-controls__accent-text">10</span></div>
-                            <div class="footballer-controls__inf"><span>Красные карточки</span><span class="fooballer-controls__accent-text">10</span></div>
-                        </div>
-                        <div class="footballer-controls__buttons">
-                            <button class="footballer-controls__button footballer-controls__button--white button">Взять</button>
-                            <button class="footballer-controls__button footballer-controls__button--grey button"
-                                data-action="close-block deactivate" data-name="search-footballer">
-                                Скрыть
-                            </button>
-                        </div>
+                        @foreach ($footballers as $footballer)
+                            <article class="footballers__card">
+                                <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls-{{ $footballer['id'] }}" data-name="search-footballer">
+                                    <img class="footballers__img"
+                                         src="{{ asset($footballer['image']) }}"
+                                         alt=""
+                                         loading="lazy"
+                                    />
+                                </button>
+                                <h3 class="footballers__name clip-text">{{ $footballer['name'] }}</h3>
+                            </article>
+
+                            <div class="footballer-controls--right footballer-controls--fixed footballer-controls--mid footballer-controls" id="footballer-controls-{{ $footballer['id'] }}" style="display: none;">
+                                <div class="footballer-controls__img-wrapper">
+                                    <img class="footballer-controls__img"
+                                         src="{{ asset($footballer['image']) }}"
+                                         alt=""
+                                         height="143"
+                                         loading="lazy"
+                                    />
+                                </div>
+                                <div class="footballer-controls__inf-wrapper">
+                                    <h3 class="footballer-controls__title">{{ $footballer['name'] }}</h3>
+                                    <div class="footballer-controls__price fooballer-controls__accent-text">${{ $footballer['price'] }}</div>
+                                    <div class="footballer-controls__inf"><span>Голы</span><span class="fooballer-controls__accent-text">{{ $footballer['goals'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Удары</span><span class="fooballer-controls__accent-text">{{ $footballer['shots'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Ключевые пасы</span><span class="fooballer-controls__accent-text">{{ $footballer['key_passes'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Ассисты</span><span class="fooballer-controls__accent-text">{{ $footballer['assists'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Поймано</span><span class="fooballer-controls__accent-text">{{ $footballer['saves'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Отборы</span><span class="fooballer-controls__accent-text">{{ $footballer['tackles'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Желтые карточки</span><span class="fooballer-controls__accent-text">{{ $footballer['yellow_cards'] }}</span></div>
+                                    <div class="footballer-controls__inf"><span>Красные карточки</span><span class="fooballer-controls__accent-text">{{ $footballer['red_cards'] }}</span></div>
+                                </div>
+                                <div class="footballer-controls__buttons">
+                                    <button class="footballer-controls__button footballer-controls__button--white button">Взять</button>
+                                    <button class="footballer-controls__button footballer-controls__button--grey button close-footballer-controls"
+                                            data-action="close-block deactivate" data-name="search-footballer" data-target-id="footballer-controls-{{ $footballer['id'] }}">
+                                        Скрыть
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -562,6 +288,6 @@
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/activate-action.js')
     @vite('resources/js/tactics-dropdown.js')
-
+    @vite('resources/js/select-tactics.js')
 </body>
 </html>
