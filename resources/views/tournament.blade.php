@@ -8,6 +8,7 @@
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
     @vite(['resources/css/lobby.css'])
+    
 </head>
 <body>
     @include('aside_menu')
@@ -27,7 +28,9 @@
                 </a>   
             </div>
             <h2 class="header__title clip-text">Название турнира</h2>   
-            <time class="header__timer">11:48</time>
+            <time class="header__timer">
+                <span id="current-time"></span>
+            </time>
         </header>
         <main class="main">
             <section class="banner">
@@ -113,5 +116,6 @@
 
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/hidden-controls.js')
+    @vite('resources/js/timer.js')
 </body>
 </html>

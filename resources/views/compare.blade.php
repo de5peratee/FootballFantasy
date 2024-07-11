@@ -11,6 +11,7 @@
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
     @vite(['resources/css/footballers.css'])
+    
 </head>
 <body>
     @include('aside_menu')

@@ -33,6 +33,7 @@
         </header>
         <a href="/logout" style="font-size: 100px; ">Разлогиниться</a>
         <a href="/draft" style="font-size: 100px;">Draft</a>
+        <a href="/team" style="font-size: 100px;">Team</a>
     </div>
 
     @vite('resources/js/modal-menu.js')

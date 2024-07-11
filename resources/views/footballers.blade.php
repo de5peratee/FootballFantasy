@@ -11,6 +11,7 @@
     @vite(['resources/css/main.css'])
     @vite(['resources/css/page.css'])
     @vite(['resources/css/footballers.css'])
+    
 </head>
 <body>
     @include('aside_menu')
@@ -30,7 +31,9 @@
                 </a>
             </div>
             <h2 class="header__title clip-text">Лето 2024</h2>
-            <time class="header__timer">11:48</time>
+            <time class="header__timer">
+                <span id="current-time"></span>
+            </time>
         </header>
         <main class="main">
             <div class="footballers">
@@ -286,5 +289,7 @@
 
     @vite('resources/js/modal-menu.js')
     @vite('resources/js/activate-action.js')
+    @vite('resources/js/timer.js')
+
 </body>
 </html>

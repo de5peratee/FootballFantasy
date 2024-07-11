@@ -5,6 +5,7 @@
 
     container-type: size;
     container-name: field;
+    height: 100%;
 
     --tactics-height: 54px;
 }
@@ -21,7 +22,7 @@
 }
 
 .field__body {
-    width: contain;
+    width: fit-content;
     height: calc(100% - var(--tactics-height));
     aspect-ratio: 0.66;
 
@@ -45,21 +46,63 @@
 }
 
 .field__tactics {
-    display: block;
+    position: relative;
     width: 90%;
     max-width: 373px;
+}
+
+.field__tactics-button {
+    width: 100%;
     height: var(--tactics-height);
+    display: block;
     padding-block: 15px;
     padding-inline: 10px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border: 0;
     color: var(--color-black);
+    border: 0;
+}
+
+.field__tactics-list {
+    position: absolute;
+    top: var(--tactics-height);
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    transition: line-height var(--transition-duration);
+    z-index: 1;
+}
+
+.field__tactics-button.active ~ .field__tactics-list {
+    line-height: 1.2;
 }
 
 .field__option {
-    padding-block: 7px;
-    text-align: center;
+    padding-block: 0.5lh;
+    padding-inline: 30px;
+    background-color: rgb(58, 58, 58, 0.8);
+}
+
+@media (hover: hover) {
+    .field__option:hover {
+        color: var(--color-black);
+        background-color: var(--color-accent);
+        cursor: default;
+    }
+}
+
+.field__option:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.field__tactics-button.active ~ .field__tactics-list .field__option:not(:last-child) {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.field__option.active {
+    color: var(--color-accent);
 }
 
 .field__footballers-wrapper {

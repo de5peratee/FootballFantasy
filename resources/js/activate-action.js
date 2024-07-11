@@ -1,3 +1,4 @@
+// этот скрипт нужен если есть список элементов, и когда один из них становится активным предыдущий деактивируется 
 
 document.addEventListener('click', function(event) {
     let btn = event.target.closest('[data-action]')
