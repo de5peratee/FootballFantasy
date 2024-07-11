@@ -47,32 +47,30 @@
                     <button class="footballers__search-controls search-box__controls"></button>
                 </div>
             </div>
-            <section class="content">
-                <div class="footballers__wrapper">
-                    <div class="footballers__list">
-                        @foreach($players as $player)
-                            <article class="footballers__card">
-                                    <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="footballer">
-                                    @if(isset($player['photo']) && !empty($player['photo']))
-                                        <img class="footballers__img"
-                                             src="{{ $player['photo'] }}"
-                                             alt="{{ $player['name'] }}"
-                                             loading="lazy"
-                                        />
-                                    @else
-                                        <img class="footballers__img"
-                                             src="{{ asset('images/default-player.png') }}" <!-- Замените на ваше стандартное изображение -->
-                                        alt="{{ $player['name'] }}"
-                                        loading="lazy"
-                                        />
-                                    @endif
-                                    </button>
-                                <h3 class="footballers__name clip-text">{{ $player['name'] }}</h3>
-                            </article>
-                        @endforeach
-                    </div>
+            <div class="footballers__wrapper">
+                <div class="footballers__list">
+                    @foreach($players as $player)
+                        <article class="footballers__card">
+                                <button class="footballers__img-wrapper button" data-action="show-block activate-me" data-target-id="footballer-controls" data-name="footballer">
+                                @if(isset($player['photo']) && !empty($player['photo']))
+                                    <img class="footballers__img"
+                                            src="{{ $player['photo'] }}"
+                                            alt="{{ $player['name'] }}"
+                                            loading="lazy"
+                                    />
+                                @else
+                                    <img class="footballers__img"
+                                            src="{{ asset('images/default-player.png') }}" <!-- Замените на ваше стандартное изображение -->
+                                    alt="{{ $player['name'] }}"
+                                    loading="lazy"
+                                    />
+                                @endif
+                                </button>
+                            <h3 class="footballers__name clip-text">{{ $player['name'] }}</h3>
+                        </article>
+                    @endforeach
                 </div>
-            </section>
+            </div>
 
         </div>
 
